@@ -7,6 +7,8 @@ import Loadable from 'ui-component/Loadable';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const Products = Loadable(lazy(() => import('views/product/Addproduct')));
+const ViewProducts = Loadable(lazy(() => import('views/product/Viewproduct')));
+const UpdateProducts = Loadable(lazy(() => import('views/product/UpdateProduct')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
@@ -46,7 +48,11 @@ const MainRoutes = {
         },
         {
           path: 'view-product',
-          element: <Products />
+          element: <ViewProducts />
+        },
+        {
+          path: 'update-product/:id',
+          element: <UpdateProducts />
         }
       ]
     },
