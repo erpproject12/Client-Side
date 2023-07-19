@@ -14,7 +14,7 @@ const SingleProducts = Loadable(lazy(() => import('views/product/SingleProduct')
 
 
 const Party = Loadable(lazy(() => import('views/party/AddParty')));;
-const ViewParty = Loadable(lazy(() => import('views/party/ViewParty')));
+const ViewParty = Loadable(lazy(() => import('views/party/View_party')));
 const UpdateParty = Loadable(lazy(() => import('views/party/UpdateParty')));
 
 
