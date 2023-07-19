@@ -29,8 +29,15 @@ export const Insert_Party=(val)=>{
     return url.post("/api/party_insert",val)
 }
 
+
 export const View_Party=()=>{
     return url.get("/api/party_view")
+
+
+
+export const Single_Product = (id) => {
+    return url.get(`/api/view/${id}`)
+
 }
 
 
