@@ -93,7 +93,7 @@ export default function Tables() {
     <Button variant="contained" startIcon={<AddIcon />}>
    <Link to={'/mparty/add-party'} style={{textDecoration:'none',color:'white'}}>Add Party</Link>
 </Button>
-    {console.log(disp)}
+    {console.log}
     </Box>
     <TableContainer component={Paper}>
       <Table sx={{ minwidth: 700 }} aria-label="customized table">
