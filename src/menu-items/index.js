@@ -5,7 +5,7 @@ import product from './product';
 import other from './other';
 import party from './party';
 
-import party from './party';
+
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {

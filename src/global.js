@@ -19,7 +19,7 @@ export const Insert_Party=(val)=>{
 }
 
 
-=======
+
 export const Single_Product = (id) => {
     return url.get(`/api/view/${id}`)
 }
