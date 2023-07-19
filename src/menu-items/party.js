@@ -1,22 +1,31 @@
 // assets
-import { IconDashboard } from '@tabler/icons';
 
+
+import PersonIcon from '@mui/icons-material/Person';
 // constant
-const icons = { IconDashboard };
+const icons = {
+ 
+  PersonIcon
+};
 
-// ==============================|| DASHBOARD MENU ITEMS ||============================== //
+
+
+
 
 const party = {
   id: 'mparty',
-  title: 'party',
+  title: 'Party',
+
   type: 'group',
   children: [
     {
       id: 'view-party',
-      title: 'party',
+
+      title:'Party',
       type: 'item',
-      url: '/mparty/view-party',
-      icon: icons.IconDashboard,
+      url: '/mproduct/view-product',
+      icon: icons.PersonIcon,
+
       breadcrumbs: false
     }
   ]
