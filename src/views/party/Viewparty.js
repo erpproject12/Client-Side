@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { View_Product, Delete_Product } from '../../global';
+import { View_Product } from '../../global';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import {Link} from 'react-router-dom'
@@ -42,7 +42,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function CustomizedTables() {
   const [display,setDisplay]=useState([]);
-  
 
   useEffect(()=>{
     View_Product()
@@ -54,28 +53,11 @@ export default function CustomizedTables() {
       console.log("Error :" + err);
     })
   },[])
-
-  const handleDelete = (id) => {
-
-  
-    // let token = JSON.parse(localStorage.getItem('token'))
-    Delete_Product(id)
-    .then((res) => {
-      console.log(res)
-      alert("deleted successfully")
-      
-  })
-  .catch((err) => {
-      console.log(err)
-  })
-}
-
-
   return (
     <div>
     <Box sx={{display:'flex',justifyContent:'end',mb:'10px'}}>
     <Button variant="contained" startIcon={<AddIcon />}>
-   <Link to={'/mproduct/add-product'} style={{textDecoration:'none',color:'white'}}>Add Product</Link>
+   <Link to={'/mparty/add-party'} style={{textDecoration:'none',color:'white'}}>Add Party</Link>
 </Button>
      
     </Box>
@@ -96,7 +78,7 @@ export default function CustomizedTables() {
         <TableBody>
           {display.map((item,index)=>{
             return(
-              <StyledTableRow key={index} >
+              <StyledTableRow >
               <StyledTableCell component="th" scope="row">
                 {index+1}
               </StyledTableCell>
@@ -106,7 +88,7 @@ export default function CustomizedTables() {
               <StyledTableCell >{item.product_description}</StyledTableCell>
               <StyledTableCell >{item.active_status}</StyledTableCell>
               <StyledTableCell >{item.date}</StyledTableCell>
-              <StyledTableCell sx={{display:'flex'}}><RemoveRedEyeIcon sx={{color:'green'}}/><Link to={`/mproduct/update-product/${item._id}`}><BorderColorIcon color="primary"/></Link><DeleteOutlineIcon sx={{color:'red'}} onClick={() => handleDelete(item._id)} /></StyledTableCell>
+              <StyledTableCell sx={{display:'flex'}}><RemoveRedEyeIcon sx={{color:'green'}}/><Link to={`/mproduct/update-product/${item._id}`}><BorderColorIcon color="primary"/></Link><DeleteOutlineIcon sx={{color:'red'}}/></StyledTableCell>
             </StyledTableRow>
             )
           })}

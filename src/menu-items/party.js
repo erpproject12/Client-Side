@@ -6,20 +6,20 @@ const icons = { IconDashboard };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
-const dashboard = {
-  id: 'dashboard',
-  title: 'Dashboard',
+const party = {
+  id: 'mparty',
+  title: 'party',
   type: 'group',
   children: [
     {
-      id: 'default',
-      title: 'Dashboabrd',
+      id: 'view-party',
+      title: 'party',
       type: 'item',
-      url: '/dashboard/default',
+      url: '/mparty/view-party',
       icon: icons.IconDashboard,
       breadcrumbs: false
     }
   ]
 };
 
-export default dashboard;
+export default party;

@@ -55,6 +55,7 @@ const products = {
       icon: icons.IconDashboard,
       breadcrumbs: false
     }
+
   ]
 };
 
