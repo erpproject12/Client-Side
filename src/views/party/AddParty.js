@@ -96,29 +96,7 @@ return(
       </Box>
     </FormControl>
     
-    <FormControl>
-      <Box
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '50ch' }
-        }}
-      >
-           <InputLabel id="demo-simple-select-label">Unit of Measure</InputLabel>
-          <Select
-          onChange={Change} 
-            variant="outlined"
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            //   value={age}
-            name='unit_of_masure'
-            label="Tax Percentage"
-          >
-            <MenuItem value={10}>20%</MenuItem>
-            <MenuItem value={20}>10%</MenuItem>
-            <MenuItem value={30}>3%</MenuItem>
-          </Select>
-      
-      </Box>
-    </FormControl>
+  
 
     <FormControl>
       <Box
@@ -131,7 +109,30 @@ return(
         <TextField id="outlined-basic" onChange={Change}  label="Party Country" name='party_country' variant="outlined" />
       </Box>
     </FormControl>
-   
+    <FormControl >
+      <Box
+       sx={{
+        '& .MuiSelect-root': { m: 1, width: '50ch' }
+      }}
+      >
+           <InputLabel id="demo-simple-select-label">Account Type</InputLabel>
+          <Select
+          onChange={Change} 
+            variant="outlined"
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            //   value={age}
+            sx={{ m: 1, width: '50ch' }}
+            name='party_account_type'
+            label="Tax Percentage"
+          >
+            <MenuItem value={'client'}>Client</MenuItem>
+            <MenuItem value={'Sellar'}>Sellar</MenuItem>
+       
+          </Select>
+      
+      </Box>
+    </FormControl>
     <FormControl>
       <Box
         sx={{
