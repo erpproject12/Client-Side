@@ -77,8 +77,8 @@ return(
         name='tax_code'
         label="Tax Percentage"
       >
-        <MenuItem value={10}>20%</MenuItem>
-        <MenuItem value={20}>10%</MenuItem>
+        <MenuItem value={20}>20%</MenuItem>
+        <MenuItem value={10}>10%</MenuItem>
         <MenuItem value={30}>3%</MenuItem>
       </Select>
     </FormControl>

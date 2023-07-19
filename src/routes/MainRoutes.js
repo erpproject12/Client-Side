@@ -7,8 +7,15 @@ import Loadable from 'ui-component/Loadable';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const Products = Loadable(lazy(() => import('views/product/Addproduct')));
+// const Party = Loadable(lazy(() => import('views/Party/Addparty')));
 const ViewProducts = Loadable(lazy(() => import('views/product/Viewproduct')));
 const UpdateProducts = Loadable(lazy(() => import('views/product/UpdateProduct')));
+const SingleProducts = Loadable(lazy(() => import('views/product/SingleProduct')));
+
+
+const Party = Loadable(lazy(() => import('views/party/AddParty')));;
+const ViewParty = Loadable(lazy(() => import('views/party/ViewParty')));
+const UpdateParty = Loadable(lazy(() => import('views/party/UpdateParty')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
@@ -53,6 +60,27 @@ const MainRoutes = {
         {
           path: 'update-product/:id',
           element: <UpdateProducts />
+        },
+        {
+          path: 'single-product/:id',
+          element: <SingleProducts />
+        }
+      ]
+    },
+    {
+      path: 'mparty',
+      children: [
+        {
+          path: 'add-product',
+          element: <Party />
+        },
+        {
+          path: 'view-product',
+          element: <ViewParty />
+        },
+        {
+          path: 'update-product/:id',
+          element: <UpdateParty />
         }
       ]
     },
