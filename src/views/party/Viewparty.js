@@ -112,13 +112,13 @@ export default function Tables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {disp.map((i,index)=>{
+          {disp.map((item,index)=>{
             return(
               <StyledTableRow  >
               <StyledTableCell component="th" scope="row">
                 {index+1}
               </StyledTableCell>
-              <StyledTableCell >{i.party_nae}</StyledTableCell>
+              <StyledTableCell >{item.party_nae}</StyledTableCell>
               <StyledTableCell >{item.party_phone}</StyledTableCell>
               <StyledTableCell >{item.party_email}</StyledTableCell>
               <StyledTableCell >{item.party_address}</StyledTableCell>
