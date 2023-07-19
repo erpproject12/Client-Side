@@ -17,6 +17,10 @@ const Party = Loadable(lazy(() => import('views/party/AddParty')));;
 const ViewParty = Loadable(lazy(() => import('views/party/ViewParty')));
 const UpdateParty = Loadable(lazy(() => import('views/party/UpdateParty')));
 
+const Party = Loadable(lazy(() => import('views/party/AddParty')));
+const ViewParty = Loadable(lazy(() => import('views/party/Viewparty')));
+const UpdateParty = Loadable(lazy(() => import('views/party/Updateparty')));
+
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
 const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
@@ -80,6 +84,23 @@ const MainRoutes = {
         },
         {
           path: 'update-product/:id',
+          element: <UpdateParty />
+        }
+      ]
+    },
+    {
+      path: 'mparty',
+      children: [
+        {
+          path: 'add-party',
+          element: <Party />
+        },
+        {
+          path: 'view-party',
+          element: <ViewParty />
+        },
+        {
+          path: 'update-party/:id',
           element: <UpdateParty />
         }
       ]
