@@ -19,11 +19,10 @@ const party = {
   type: 'group',
   children: [
     {
-      id: 'view-party',
-
+      id:'view-party',
       title:'Party',
       type: 'item',
-      url: '/mproduct/view-product',
+      url:'/mparty/view-party',
       icon: icons.PersonIcon,
 
       breadcrumbs: false
