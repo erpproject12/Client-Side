@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import { View_Product,DeleteProduct } from '../../global';
+import { View_Product,DeleteProduct, View_Party } from '../../global';
 
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -45,6 +45,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function CustomizedTables() {
   const [display,setDisplay]=useState([]);
+  const [display1,setDisplay1]=useState([]);
   
 
   useEffect(()=>{
@@ -52,6 +53,16 @@ export default function CustomizedTables() {
     .then((res)=>{
       console.log("Product Response : " + JSON.stringify(res.data));
       setDisplay(res.data)
+    })
+    .catch((err)=>{
+      console.log("Error :" + err);
+    })
+  },[])
+  useEffect(()=>{
+    View_Party()
+    .then((res)=>{
+      console.log("Product Response : " + JSON.stringify(res.data));
+      setDisplay1(res.data)
     })
     .catch((err)=>{
       console.log("Error :" + err);
@@ -89,24 +100,26 @@ export default function CustomizedTables() {
 
   return (
     <div>
-    <Box sx={{display:'flex',justifyContent:'end',mb:'10px'}}>
-    <Button variant="contained" startIcon={<AddIcon />}>
-   <Link to={'/mproduct/add-product'} style={{textDecoration:'none',color:'white'}}>Add Product</Link>
-</Button>
-     
-    </Box>
+    <Box sx={{ display: 'flex', justifyContent: 'end', mb: '10px' }}>
+        <Button variant="contained" startIcon={<AddIcon />}>
+          <Link to={'/mparty/add-party'} style={{ textDecoration: 'none', color: 'white' }}>
+            Add Party
+          </Link>
+        </Button>
+        {console.log}
+      </Box>
     <TableContainer component={Paper}>
       <Table sx={{ minwidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>#</StyledTableCell>
-            <StyledTableCell>Product Code</StyledTableCell>
-            <StyledTableCell>Product Name</StyledTableCell>
-            <StyledTableCell>Tax(%)</StyledTableCell>
-            <StyledTableCell>Description</StyledTableCell>
-            <StyledTableCell>Active Status</StyledTableCell>
-            <StyledTableCell>Date</StyledTableCell>
-            <StyledTableCell>Action</StyledTableCell>
+          <StyledTableCell>#</StyledTableCell>
+              <StyledTableCell>Party Name</StyledTableCell>
+              <StyledTableCell>Contact Number</StyledTableCell>
+              <StyledTableCell>Email</StyledTableCell>
+              <StyledTableCell>Address</StyledTableCell>
+              <StyledTableCell>Account Type</StyledTableCell>
+              <StyledTableCell>Date</StyledTableCell>
+              <StyledTableCell>Action</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -116,7 +129,7 @@ export default function CustomizedTables() {
               <StyledTableCell component="th" scope="row">
                 {index+1}
               </StyledTableCell>
-              <StyledTableCell >{item.product_code}</StyledTableCell>
+              <StyledTableCell >{item.party_name}</StyledTableCell>
               <StyledTableCell >{item.product_name}</StyledTableCell>
               <StyledTableCell >{item.tax_code}</StyledTableCell>
               <StyledTableCell >{item.product_description}</StyledTableCell>
@@ -128,6 +141,7 @@ export default function CustomizedTables() {
               <Link to={`/mproduct/single-product/${item._id}`}><RemoveRedEyeIcon sx={{color:'green'}}/></Link>
                 <Link to={`/mproduct/update-product/${item._id}`}><BorderColorIcon color="primary"/></Link>
                  <Link to={''}><DeleteOutlineIcon onClick={()=>{handleDelete(item._id)}} sx={{color:'red'}}/></Link>
+
                   </StyledTableCell>
 
             </StyledTableRow>

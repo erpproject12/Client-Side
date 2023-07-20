@@ -7,16 +7,18 @@ import Loadable from 'ui-component/Loadable';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const Products = Loadable(lazy(() => import('views/product/Addproduct')));
-// const Party = Loadable(lazy(() => import('views/Party/Addparty')));
+
 const ViewProducts = Loadable(lazy(() => import('views/product/Viewproduct')));
 const UpdateProducts = Loadable(lazy(() => import('views/product/UpdateProduct')));
 const SingleProducts = Loadable(lazy(() => import('views/product/SingleProduct')));
 
 
-const Party = Loadable(lazy(() => import('views/party/AddParty')));;
-const ViewParty = Loadable(lazy(() => import('views/party/ViewParty')));
+
+const Party = Loadable(lazy(() => import('views/party/AddParty')));
+const ViewParty = Loadable(lazy(() => import('views/party/View_party')));
 const UpdateParty = Loadable(lazy(() => import('views/party/UpdateParty')));
-const SingleParty = Loadable(lazy(() => import('views/party/SingleParty')));
+
+
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
@@ -68,6 +70,7 @@ const MainRoutes = {
         }
       ]
     },
+
     {
       path: 'mparty',
       children: [
@@ -78,14 +81,6 @@ const MainRoutes = {
         {
           path: 'view-party',
           element: <ViewParty />
-        },
-        {
-          path: 'update-party/:id',
-          element: <UpdateParty />
-        },
-        {
-          path: 'single-party/:id',
-          element: <SingleParty />
         }
       ]
     },

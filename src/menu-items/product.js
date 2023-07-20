@@ -24,6 +24,7 @@ const products = {
       icon: icons.AddToPhotosIcon,
       breadcrumbs: false
     }
+
   ]
 };
 

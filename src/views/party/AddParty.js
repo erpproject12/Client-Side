@@ -49,10 +49,9 @@ const SamplePage = () =>{
       })
   .catch((error)=>{
   console.log("Error :"+ error)
- 
   })
   }
-console.log(party)
+
 return(
 
   <MainCard title="Add Party Details">
@@ -127,7 +126,7 @@ return(
             name='party_account_type'
             label="Tax Percentage"
           >
-            <MenuItem value={'Client'}>Client</MenuItem>
+            <MenuItem value={'client'}>Client</MenuItem>
             <MenuItem value={'Sellar'}>Sellar</MenuItem>
        
           </Select>
