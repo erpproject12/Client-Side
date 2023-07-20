@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import { View_Party } from '../../global';
+import { View_Party,Delete_Party} from '../../global';
 
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -55,29 +55,29 @@ export default function ViewParty() {
         console.log('Error: ' + err);
       });
   }, []);
-console.log(dis)
-//   const handleDelete = (id) => {
-//     Swal.fire({
-//       title: 'Are you sure?',
-//       text: "You won't be able to revert this!",
-//       icon: 'warning',
-//       showCancelButton: true,
-//       confirmButtonColor: '#3085d6',
-//       cancelButtonColor: '#d33',
-//       confirmButtonText: 'Yes, delete it!',
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         DeleteProduct(id)
-//           .then((res) => {
-//             console.log(res);
-//           })
-//           .catch((err) => {
-//             console.log(err);
-//           });
-//         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
-//       }
-//     });
-//   };
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Delete_Party(id)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+      }
+    });
+  };
 
   return (
     <div>

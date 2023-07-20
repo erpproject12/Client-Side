@@ -33,6 +33,9 @@ export const Single_Party = (id) => {
 export const Update_Party = (id,party) => {
     return url.put(`/api/party_update/${id}`,party)
 }
+export const Delete_Party = (id) => {
+    return url.delete(`/api/party_delete/${id}`)
+}
 const url = Axios.create({
     baseURL:"http://127.0.0.1:4000"
 })
