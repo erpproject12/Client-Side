@@ -124,6 +124,7 @@ export default function CustomizedTables() {
               <StyledTableCell >{item.date}</StyledTableCell>
 
               <StyledTableCell sx={{display:'flex'}}>
+
               <Link to={`/mproduct/single-product/${item._id}`}><RemoveRedEyeIcon sx={{color:'green'}}/></Link>
                 <Link to={`/mproduct/update-product/${item._id}`}><BorderColorIcon color="primary"/></Link>
                  <Link to={''}><DeleteOutlineIcon onClick={()=>{handleDelete(item._id)}} sx={{color:'red'}}/></Link>
