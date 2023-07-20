@@ -71,17 +71,21 @@ const MainRoutes = {
       path: 'mparty',
       children: [
         {
-          path: 'add-product',
+          path: 'add-party',
           element: <Party />
         },
         {
-          path: 'view-product',
+          path: 'view-party',
           element: <ViewParty />
         },
         {
-          path: 'update-product/:id',
+          path: 'update-party/:id',
           element: <UpdateParty />
-        }
+        },
+        // {
+        //   path: 'single-party/:id',
+        //   element: <SingleParty />
+        // }
       ]
     },
    

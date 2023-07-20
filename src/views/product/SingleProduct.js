@@ -28,6 +28,34 @@ return(
     <Typography variant="body2">
      Product Code:{product.product_code}
      Product Name:{product.product_name}
+     Product Name:{product.tax_code}
+     Product Name:{product.product_description}
+     Product Name:{product.rack_no}
+     Product Name:{product.HSN}
+     Product Name:{product.category}
+     Product Name:{product.
+manufactures
+}
+     Product Name:{product.unit_of_masure}
+     Product Name:{product.
+weight_dimension
+}
+     Product Name:{product.
+
+variants
+
+}
+     Product Name:{product.
+
+date
+
+}
+     Product Name:{product.
+
+
+updated_date
+
+}
     </Typography>
   </MainCard>
 )};
